@@ -1,0 +1,24 @@
+#include<stdio.h>
+int form(int n)
+{ 
+  if (n < 0) {
+        return -form(-n);
+    } else if (n == 0) {
+        return 0;
+    } else if (n % 2 == 1) {
+        return form(n / 10);
+    } else {
+        return 10 * form(n / 10) + (n % 10);
+    }  
+}
+int main()
+{
+   int T, no;
+   scanf("%d",&T);
+   while(T--)
+   {
+     scanf("%d",&no);
+     printf("%d\n",form(no));
+   }
+ return 0;
+}
